@@ -61,6 +61,18 @@ public class SinglePlayer extends javax.swing.JDialog {
         }
 
     }
+    
+    ArrayList<Node> temp = new ArrayList<Node>();
+    
+    private void traverse(Node root){
+        temp.add(root);
+        if(root.getChildren().size()==0){
+            
+        }
+        for(Node child:root.getChildren()){
+            traverse(child);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
