@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package tictactoe;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,11 +13,45 @@ package tictactoe;
  */
 public class WelcomeScreen extends javax.swing.JFrame {
 
+    boolean isSinglePlayer = true;
+
     /**
      * Creates new form WelcomeScreen
      */
     public WelcomeScreen() {
         initComponents();
+        singlePlayerBtn.setOpaque(false);
+        singlePlayerBtn.setContentAreaFilled(false);
+        twoPlayerBtn.setOpaque(false);
+        twoPlayerBtn.setContentAreaFilled(false);
+        quitGameBtn.setOpaque(false);
+        quitGameBtn.setContentAreaFilled(false);
+
+        singlePlayerNewPlayerBtn.setOpaque(false);
+        singlePlayerNewPlayerBtn.setContentAreaFilled(false);
+        singlePlayerBackBtn.setOpaque(false);
+        singlePlayerBackBtn.setContentAreaFilled(false);
+        singlePlayerQuitGameBtn.setOpaque(false);
+        singlePlayerQuitGameBtn.setContentAreaFilled(false);
+
+        newPlayer1Btn.setOpaque(false);
+        newPlayer1Btn.setContentAreaFilled(false);
+        newPlayer2Btn.setOpaque(false);
+        newPlayer2Btn.setContentAreaFilled(false);
+        backBtn.setOpaque(false);
+        backBtn.setContentAreaFilled(false);
+        twoPlayerQuitGameBtn.setOpaque(false);
+        twoPlayerQuitGameBtn.setContentAreaFilled(false);
+
+        playBtn.setOpaque(false);
+        playBtn.setContentAreaFilled(false);
+
+        singlePlayerPanel.setOpaque(false);
+        twoPlayerPanel1.setOpaque(false);
+        //singlePlayerPanel.setContentAreaFilled(false);
+        singlePlayerPanel.setVisible(false);
+        twoPlayerPanel1.setVisible(false);
+        playBtn.setVisible(false);
     }
 
     /**
@@ -28,74 +63,350 @@ public class WelcomeScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        singlePlayerButton = new javax.swing.JButton();
-        twoPlayerButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        twoPlayerPanel1 = new javax.swing.JPanel();
+        player1Combo = new javax.swing.JComboBox();
+        twoPlayerQuitGameBtn = new javax.swing.JButton();
+        newPlayer1Btn = new javax.swing.JButton();
+        Player1Label = new javax.swing.JLabel();
+        Player2Label = new javax.swing.JLabel();
+        player2Combo = new javax.swing.JComboBox();
+        newPlayer2Btn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
+        singlePlayerPanel = new javax.swing.JPanel();
+        singlePlayerNameCombo = new javax.swing.JComboBox();
+        singlePlayerQuitGameBtn = new javax.swing.JButton();
+        singlePlayerNewPlayerBtn = new javax.swing.JButton();
+        singlePlayerLabel = new javax.swing.JLabel();
+        singlePlayerBackBtn = new javax.swing.JButton();
+        playBtn = new javax.swing.JButton();
+        twoPlayerBtn = new javax.swing.JButton();
+        singlePlayerBtn = new javax.swing.JButton();
+        quitGameBtn = new javax.swing.JButton();
+        titleLabel = new javax.swing.JLabel();
+        backgroundLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tic Tac Toe");
+        setMinimumSize(new java.awt.Dimension(626, 536));
+        getContentPane().setLayout(null);
 
-        singlePlayerButton.setText("Single Player");
-        singlePlayerButton.addActionListener(new java.awt.event.ActionListener() {
+        twoPlayerPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 102, 0), new java.awt.Color(153, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 153, 0)));
+
+        player1Combo.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        player1Combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Players" }));
+
+        twoPlayerQuitGameBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        twoPlayerQuitGameBtn.setText("Quit Game");
+        twoPlayerQuitGameBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        twoPlayerQuitGameBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                singlePlayerButtonActionPerformed(evt);
+                twoPlayerQuitGameBtnActionPerformed(evt);
             }
         });
 
-        twoPlayerButton.setText("Two Player");
-        twoPlayerButton.addActionListener(new java.awt.event.ActionListener() {
+        newPlayer1Btn.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        newPlayer1Btn.setText("New Player");
+        newPlayer1Btn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        newPlayer1Btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                twoPlayerButtonActionPerformed(evt);
+                newPlayer1BtnActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Select Mode");
+        Player1Label.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        Player1Label.setText("Select Player 1");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(twoPlayerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(singlePlayerButton, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
-                .addContainerGap(104, Short.MAX_VALUE))
+        Player2Label.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        Player2Label.setText("Select Player 2");
+
+        player2Combo.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        player2Combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Players" }));
+
+        newPlayer2Btn.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        newPlayer2Btn.setText("New Player");
+        newPlayer2Btn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        newPlayer2Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newPlayer2BtnActionPerformed(evt);
+            }
+        });
+
+        backBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        backBtn.setText("Back");
+        backBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout twoPlayerPanel1Layout = new javax.swing.GroupLayout(twoPlayerPanel1);
+        twoPlayerPanel1.setLayout(twoPlayerPanel1Layout);
+        twoPlayerPanel1Layout.setHorizontalGroup(
+            twoPlayerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(twoPlayerPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(twoPlayerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(twoPlayerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(newPlayer2Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(newPlayer1Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(twoPlayerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(twoPlayerPanel1Layout.createSequentialGroup()
+                                .addComponent(Player2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(player2Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(twoPlayerPanel1Layout.createSequentialGroup()
+                                .addComponent(Player1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25)
+                                .addComponent(player1Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(twoPlayerPanel1Layout.createSequentialGroup()
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(twoPlayerQuitGameBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {singlePlayerButton, twoPlayerButton});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(singlePlayerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+        twoPlayerPanel1Layout.setVerticalGroup(
+            twoPlayerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(twoPlayerPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(twoPlayerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(player1Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Player1Label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(twoPlayerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addComponent(newPlayer1Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGroup(twoPlayerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(player2Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Player2Label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(newPlayer2Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(twoPlayerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(twoPlayerQuitGameBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {singlePlayerButton, twoPlayerButton});
+        getContentPane().add(twoPlayerPanel1);
+        twoPlayerPanel1.setBounds(160, 170, 310, 220);
+
+        singlePlayerPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 102, 0), new java.awt.Color(153, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 153, 0)));
+
+        singlePlayerNameCombo.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        singlePlayerNameCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Players" }));
+
+        singlePlayerQuitGameBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        singlePlayerQuitGameBtn.setText("Quit Game");
+        singlePlayerQuitGameBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        singlePlayerQuitGameBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                singlePlayerQuitGameBtnActionPerformed(evt);
+            }
+        });
+
+        singlePlayerNewPlayerBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        singlePlayerNewPlayerBtn.setText("New Player");
+        singlePlayerNewPlayerBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        singlePlayerNewPlayerBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                singlePlayerNewPlayerBtnActionPerformed(evt);
+            }
+        });
+
+        singlePlayerLabel.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        singlePlayerLabel.setText("Select Player");
+
+        singlePlayerBackBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        singlePlayerBackBtn.setText("Back");
+        singlePlayerBackBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        singlePlayerBackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                singlePlayerBackBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout singlePlayerPanelLayout = new javax.swing.GroupLayout(singlePlayerPanel);
+        singlePlayerPanel.setLayout(singlePlayerPanelLayout);
+        singlePlayerPanelLayout.setHorizontalGroup(
+            singlePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, singlePlayerPanelLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addGroup(singlePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, singlePlayerPanelLayout.createSequentialGroup()
+                        .addComponent(singlePlayerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))
+                    .addComponent(singlePlayerBackBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(singlePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(singlePlayerNewPlayerBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                    .addComponent(singlePlayerNameCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(singlePlayerQuitGameBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
+        );
+        singlePlayerPanelLayout.setVerticalGroup(
+            singlePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(singlePlayerPanelLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(singlePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(singlePlayerNameCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(singlePlayerLabel))
+                .addGap(18, 18, 18)
+                .addComponent(singlePlayerNewPlayerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(singlePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(singlePlayerQuitGameBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(singlePlayerBackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27))
+        );
+
+        getContentPane().add(singlePlayerPanel);
+        singlePlayerPanel.setBounds(160, 170, 310, 220);
+
+        playBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        playBtn.setText("Let's Play");
+        playBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        playBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(playBtn);
+        playBtn.setBounds(220, 400, 180, 50);
+
+        twoPlayerBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 18)); // NOI18N
+        twoPlayerBtn.setText("Two Player");
+        twoPlayerBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        twoPlayerBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                twoPlayerBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(twoPlayerBtn);
+        twoPlayerBtn.setBounds(220, 280, 190, 60);
+
+        singlePlayerBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 18)); // NOI18N
+        singlePlayerBtn.setText("Single Player");
+        singlePlayerBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        singlePlayerBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                singlePlayerBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(singlePlayerBtn);
+        singlePlayerBtn.setBounds(220, 210, 190, 60);
+
+        quitGameBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 18)); // NOI18N
+        quitGameBtn.setText("Quit Game");
+        quitGameBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 204, 0)));
+        quitGameBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitGameBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(quitGameBtn);
+        quitGameBtn.setBounds(220, 350, 190, 60);
+
+        titleLabel.setFont(new java.awt.Font("Viner Hand ITC", 3, 36)); // NOI18N
+        titleLabel.setText("Tic Tac Toe");
+        getContentPane().add(titleLabel);
+        titleLabel.setBounds(210, 120, 210, 40);
+
+        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fine-ancient-leather-scroll-background-psd_54-10079.jpg"))); // NOI18N
+        getContentPane().add(backgroundLabel);
+        backgroundLabel.setBounds(0, 0, 626, 536);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void singlePlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singlePlayerButtonActionPerformed
-        this.dispose();
-        SinglePlayer game = new SinglePlayer(this, true);
-        game.setLocationRelativeTo(null);
-        game.setVisible(true);
-    }//GEN-LAST:event_singlePlayerButtonActionPerformed
+    private void singlePlayerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singlePlayerBtnActionPerformed
 
-    private void twoPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoPlayerButtonActionPerformed
-        this.dispose();
-        TwoPlayer game =new TwoPlayer();
-        game.setLocationRelativeTo(null);
-        game.setVisible(true);
-    }//GEN-LAST:event_twoPlayerButtonActionPerformed
+        isSinglePlayer = true;
+
+        singlePlayerBtn.setVisible(false);
+        twoPlayerBtn.setVisible(false);
+        quitGameBtn.setVisible(false);
+        singlePlayerPanel.setVisible(true);
+        playBtn.setVisible(true);
+
+    }//GEN-LAST:event_singlePlayerBtnActionPerformed
+
+    private void twoPlayerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoPlayerBtnActionPerformed
+
+        isSinglePlayer = false;
+
+        singlePlayerBtn.setVisible(false);
+        twoPlayerBtn.setVisible(false);
+        quitGameBtn.setVisible(false);
+
+        twoPlayerPanel1.setVisible(true);
+        playBtn.setVisible(true);
+    }//GEN-LAST:event_twoPlayerBtnActionPerformed
+
+    private void quitGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitGameBtnActionPerformed
+        int reply = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit the game?", "Quit Game", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+
+    }//GEN-LAST:event_quitGameBtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+
+        twoPlayerPanel1.setVisible(false);
+        playBtn.setVisible(false);
+        singlePlayerBtn.setVisible(true);
+        twoPlayerBtn.setVisible(true);
+        quitGameBtn.setVisible(true);
+
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void newPlayer2BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPlayer2BtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newPlayer2BtnActionPerformed
+
+    private void newPlayer1BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPlayer1BtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newPlayer1BtnActionPerformed
+
+    private void twoPlayerQuitGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoPlayerQuitGameBtnActionPerformed
+        int reply = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit the game?", "Quit Game", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_twoPlayerQuitGameBtnActionPerformed
+
+    private void singlePlayerBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singlePlayerBackBtnActionPerformed
+        singlePlayerPanel.setVisible(false);
+        playBtn.setVisible(false);
+        singlePlayerBtn.setVisible(true);
+        twoPlayerBtn.setVisible(true);
+        quitGameBtn.setVisible(true);
+    }//GEN-LAST:event_singlePlayerBackBtnActionPerformed
+
+    private void singlePlayerNewPlayerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singlePlayerNewPlayerBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_singlePlayerNewPlayerBtnActionPerformed
+
+    private void singlePlayerQuitGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singlePlayerQuitGameBtnActionPerformed
+        int reply = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit the game?", "Quit Game", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_singlePlayerQuitGameBtnActionPerformed
+
+    private void playBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playBtnActionPerformed
+        if (isSinglePlayer) {
+            this.dispose();
+            Window game = new Window();
+            game.setLocationRelativeTo(null);
+            game.setVisible(true);
+        } else {
+            this.dispose();
+            TwoPlayer game = new TwoPlayer();
+            game.setLocationRelativeTo(null);
+            game.setVisible(true);
+        }
+    }//GEN-LAST:event_playBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,8 +444,26 @@ public class WelcomeScreen extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton singlePlayerButton;
-    private javax.swing.JButton twoPlayerButton;
+    private javax.swing.JLabel Player1Label;
+    private javax.swing.JLabel Player2Label;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JLabel backgroundLabel;
+    private javax.swing.JButton newPlayer1Btn;
+    private javax.swing.JButton newPlayer2Btn;
+    private javax.swing.JButton playBtn;
+    private javax.swing.JComboBox player1Combo;
+    private javax.swing.JComboBox player2Combo;
+    private javax.swing.JButton quitGameBtn;
+    private javax.swing.JButton singlePlayerBackBtn;
+    private javax.swing.JButton singlePlayerBtn;
+    private javax.swing.JLabel singlePlayerLabel;
+    private javax.swing.JComboBox singlePlayerNameCombo;
+    private javax.swing.JButton singlePlayerNewPlayerBtn;
+    private javax.swing.JPanel singlePlayerPanel;
+    private javax.swing.JButton singlePlayerQuitGameBtn;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JButton twoPlayerBtn;
+    private javax.swing.JPanel twoPlayerPanel1;
+    private javax.swing.JButton twoPlayerQuitGameBtn;
     // End of variables declaration//GEN-END:variables
 }

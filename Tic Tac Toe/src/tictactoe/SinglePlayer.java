@@ -116,6 +116,11 @@ public class SinglePlayer extends javax.swing.JDialog {
                 startBtnMouseClicked(evt);
             }
         });
+        startBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startBtnActionPerformed(evt);
+            }
+        });
 
         wonLbl.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
@@ -304,6 +309,10 @@ public class SinglePlayer extends javax.swing.JDialog {
         menu.setLocationRelativeTo(null);
         menu.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
+
+    private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_startBtnActionPerformed
 
     /**
      * @param args the command line arguments
