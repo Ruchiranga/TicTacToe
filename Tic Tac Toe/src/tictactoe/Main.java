@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package tictactoe;
 
 import de.javasoft.plaf.synthetica.SyntheticaBlackStarLookAndFeel;
@@ -22,18 +21,26 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        try {
-//            //UIManager.setLookAndFeel(new SyntheticaBlackStarLookAndFeel());
+
+        try {
+            //UIManager.setLookAndFeel(new SyntheticaBlackStarLookAndFeel());
+            UIManager.setLookAndFeel("com.jtattoo.plaf.noire.NoireLookAndFeel");
             WelcomeScreen menu = new WelcomeScreen();
             menu.setLocationRelativeTo(null);
             menu.setVisible(true);
-//            SinglePlayer tic = new SinglePlayer(null, true);
-//            tic.setVisible(true);
-//        } catch (UnsupportedLookAndFeelException ex) {
-//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-//        }  catch (ParseException ex) {
-//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+            //SinglePlayer tic = new SinglePlayer(null, true);
+            //tic.setVisible(true);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+
     }
 
 }
