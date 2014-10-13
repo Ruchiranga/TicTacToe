@@ -92,7 +92,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
 
     private void twoPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoPlayerButtonActionPerformed
         this.dispose();
-        TwoPlayer game =new TwoPlayer(this, true);
+        TwoPlayer game =new TwoPlayer();
         game.setLocationRelativeTo(null);
         game.setVisible(true);
     }//GEN-LAST:event_twoPlayerButtonActionPerformed
