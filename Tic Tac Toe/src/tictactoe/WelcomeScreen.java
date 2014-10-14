@@ -5,6 +5,11 @@
  */
 package tictactoe;
 
+import connection.DBConnection;
+import controller.DBController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,6 +20,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
 
     boolean isSinglePlayer = true;
     int isPlayer = 0;
+
     /**
      * Creates new form WelcomeScreen
      */
@@ -42,7 +48,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         backBtn.setContentAreaFilled(false);
         twoPlayerQuitGameBtn.setOpaque(false);
         twoPlayerQuitGameBtn.setContentAreaFilled(false);
-        
+
         addPlayerBtn.setOpaque(false);
         addPlayerBtn.setContentAreaFilled(false);
         newPlayerBackBtn.setOpaque(false);
@@ -61,6 +67,27 @@ public class WelcomeScreen extends javax.swing.JFrame {
         twoPlayerPanel1.setVisible(false);
         NewPlayerPlanel.setVisible(false);
         playBtn.setVisible(false);
+
+        String[] players = null;
+        try {
+            players = DBController.getPlayers();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(WelcomeScreen.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WelcomeScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (players.length == 0) {
+            player1Combo.setEnabled(false);
+            player2Combo.setEnabled(false);
+            singlePlayerNameCombo.setEnabled(false);
+        } else {
+            for (String name : players) {
+                player1Combo.addItem(name);
+                player2Combo.addItem(name);
+                singlePlayerNameCombo.addItem(name);
+            }
+        }
+
     }
 
     /**
@@ -208,7 +235,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
         singlePlayerPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 102, 0), new java.awt.Color(153, 0, 0), new java.awt.Color(204, 204, 0), new java.awt.Color(204, 153, 0)));
 
         singlePlayerNameCombo.setFont(new java.awt.Font("Traditional Arabic", 1, 18)); // NOI18N
-        singlePlayerNameCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Players" }));
 
         singlePlayerQuitGameBtn.setFont(new java.awt.Font("Traditional Arabic", 1, 18)); // NOI18N
         singlePlayerQuitGameBtn.setText("Quit Game");
@@ -423,6 +449,20 @@ public class WelcomeScreen extends javax.swing.JFrame {
         singlePlayerPanel.setVisible(true);
         playBtn.setVisible(true);
 
+        singlePlayerNameCombo.removeAllItems();
+
+        String[] names = null;
+        try {
+            names = DBController.getPlayers();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(WelcomeScreen.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WelcomeScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        for (String name : names) {
+            singlePlayerNameCombo.addItem(name);
+        }
     }//GEN-LAST:event_singlePlayerBtnActionPerformed
 
     private void twoPlayerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoPlayerBtnActionPerformed
@@ -434,8 +474,27 @@ public class WelcomeScreen extends javax.swing.JFrame {
         NewPlayerPlanel.setVisible(false);
         quitGameBtn.setVisible(false);
 
+        player1Combo.removeAllItems();
+        player2Combo.removeAllItems();
+
+        String[] names = null;
+        try {
+            names = DBController.getPlayers();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(WelcomeScreen.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WelcomeScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        for (String name : names) {
+            player1Combo.addItem(name);
+            player2Combo.addItem(name);
+        }
+
         twoPlayerPanel1.setVisible(true);
         playBtn.setVisible(true);
+
+
     }//GEN-LAST:event_twoPlayerBtnActionPerformed
 
     private void quitGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitGameBtnActionPerformed
@@ -521,36 +580,66 @@ public class WelcomeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_newPlayerQuitGameBtnActionPerformed
 
     private void newPlayerBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPlayerBackBtnActionPerformed
-        
+
         NewPlayerPlanel.setVisible(false);
         playBtn.setVisible(true);
-        if(isSinglePlayer){
+        if (isSinglePlayer) {
             singlePlayerPanel.setVisible(true);
-        }else{
+        } else {
             twoPlayerPanel1.setVisible(true);
         }
-        
-        
+
+
     }//GEN-LAST:event_newPlayerBackBtnActionPerformed
 
     private void addPlayerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerBtnActionPerformed
         String playerName = playerNameText.getText();
         playerNameText.setText("");
+        try {
+            DBController.addPlayer(playerName);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(WelcomeScreen.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WelcomeScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
         NewPlayerPlanel.setVisible(false);
         playBtn.setVisible(true);
-        if(isSinglePlayer){
+//        String spcomboSel = (String) singlePlayerNameCombo.getSelectedItem();
+//        String p1combo1Sel = (String) player1Combo.getSelectedItem();
+//        String p2combo1Sel = (String) player2Combo.getSelectedItem();
+        
+        
+        singlePlayerNameCombo.removeAllItems();
+        player1Combo.removeAllItems();
+        player2Combo.removeAllItems();
+
+        String[] names = null;
+        try {
+            names = DBController.getPlayers();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(WelcomeScreen.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WelcomeScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        for (String name : names) {
+            singlePlayerNameCombo.addItem(name);
+            player1Combo.addItem(name);
+            player2Combo.addItem(name);
+        }
+
+        if (isSinglePlayer) {
             singlePlayerPanel.setVisible(true);
-            singlePlayerNameCombo.addItem(playerName);
-            singlePlayerNameCombo.setSelectedItem(playerName);
-        }else{
+//            singlePlayerNameCombo.setSelectedItem(singlePlayerNameCombo.getItemCount() - 1);
+        } else {
             twoPlayerPanel1.setVisible(true);
-            player1Combo.addItem(playerName);
-            player2Combo.addItem(playerName);
-            if(isPlayer == 1){
-                player1Combo.setSelectedItem(playerName);
-            }if(isPlayer == 2){
-                player2Combo.setSelectedItem(playerName);
-            }
+//
+//            if (isPlayer == 1) {
+//                player1Combo.setSelectedItem(player1Combo.getItemCount() - 1);
+//            }
+//            if (isPlayer == 2) {
+//                player2Combo.setSelectedItem(player2Combo.getItemCount() - 1);
+//            }
         }
     }//GEN-LAST:event_addPlayerBtnActionPerformed
 

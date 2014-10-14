@@ -24,17 +24,17 @@ public class Window extends javax.swing.JFrame {
     boolean prompt = true;
     int ways[][] = new int[8][3];
     int counts[] = new int[8];
-    int pair[] = new int[2];
+    //int pair[] = new int[2];
     int ar[][];
-    int winner;
+    //int winner;
 
     public Window() {
         ar = new int[3][3];
         initComponents();
-        
+
         gridPanel.setOpaque(false);
         scoreBoard.setOpaque(false);
-        
+
         startBtn.setOpaque(false);
         startBtn.setContentAreaFilled(false);
         b00.setOpaque(false);
@@ -57,10 +57,10 @@ public class Window extends javax.swing.JFrame {
         b22.setContentAreaFilled(false);
         quitBtn.setOpaque(false);
         quitBtn.setContentAreaFilled(false);
-        
+
         backBtn.setOpaque(false);
         backBtn.setContentAreaFilled(false);
-        
+
         buttons = new JButton[3][3];
         buttons[0][0] = b00;
         buttons[0][1] = b01;
@@ -71,13 +71,16 @@ public class Window extends javax.swing.JFrame {
         buttons[2][0] = b20;
         buttons[2][1] = b21;
         buttons[2][2] = b22;
-        
+
         if (session % 2 == 0) {
             prompt = false;
 //            respond();
             mark(ar, 1, 1);
             if (win() == 5) {
                 wonLbl.setText("You lost!");
+                int count = Integer.parseInt(computerLabel.getText());
+                computerLabel.setText((count + 1) + "");
+
                 for (int i = 0; i < 3; i++) {
                     for (JButton b : buttons[i]) {
                         b.setEnabled(false);
@@ -85,7 +88,10 @@ public class Window extends javax.swing.JFrame {
                 }
                 return;
             } else if (win() == -1) {
+
                 wonLbl.setText("It is a draw!");
+                int count = Integer.parseInt(tiesLabel.getText());
+                tiesLabel.setText((count + 1) + "");
                 for (int i = 0; i < 3; i++) {
                     for (JButton b : buttons[i]) {
                         b.setEnabled(false);
@@ -129,9 +135,9 @@ public class Window extends javax.swing.JFrame {
         singlePlayerLabel1 = new javax.swing.JLabel();
         singlePlayerLabel2 = new javax.swing.JLabel();
         singlePlayerLabel3 = new javax.swing.JLabel();
-        singlePlayerLabel4 = new javax.swing.JLabel();
-        singlePlayerLabel5 = new javax.swing.JLabel();
-        singlePlayerLabel6 = new javax.swing.JLabel();
+        computerLabel = new javax.swing.JLabel();
+        playerlabel = new javax.swing.JLabel();
+        tiesLabel = new javax.swing.JLabel();
         wonLbl = new javax.swing.JLabel();
         titleLbl = new javax.swing.JLabel();
         quitBtn = new javax.swing.JButton();
@@ -315,17 +321,17 @@ public class Window extends javax.swing.JFrame {
         singlePlayerLabel3.setForeground(new java.awt.Color(153, 0, 0));
         singlePlayerLabel3.setText("Ties");
 
-        singlePlayerLabel4.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
-        singlePlayerLabel4.setForeground(new java.awt.Color(153, 0, 0));
-        singlePlayerLabel4.setText("0");
+        computerLabel.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
+        computerLabel.setForeground(new java.awt.Color(153, 0, 0));
+        computerLabel.setText("0");
 
-        singlePlayerLabel5.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
-        singlePlayerLabel5.setForeground(new java.awt.Color(153, 0, 0));
-        singlePlayerLabel5.setText("0");
+        playerlabel.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
+        playerlabel.setForeground(new java.awt.Color(153, 0, 0));
+        playerlabel.setText("0");
 
-        singlePlayerLabel6.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
-        singlePlayerLabel6.setForeground(new java.awt.Color(153, 0, 0));
-        singlePlayerLabel6.setText("0");
+        tiesLabel.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
+        tiesLabel.setForeground(new java.awt.Color(153, 0, 0));
+        tiesLabel.setText("0");
 
         javax.swing.GroupLayout scoreBoardLayout = new javax.swing.GroupLayout(scoreBoard);
         scoreBoard.setLayout(scoreBoardLayout);
@@ -339,9 +345,9 @@ public class Window extends javax.swing.JFrame {
                     .addComponent(singlePlayerLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(scoreBoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(singlePlayerLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(singlePlayerLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(singlePlayerLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(playerlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(computerLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tiesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53))
         );
         scoreBoardLayout.setVerticalGroup(
@@ -350,15 +356,15 @@ public class Window extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(scoreBoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(singlePlayerLabel1)
-                    .addComponent(singlePlayerLabel4))
+                    .addComponent(computerLabel))
                 .addGap(18, 18, 18)
                 .addGroup(scoreBoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(singlePlayerLabel2)
-                    .addComponent(singlePlayerLabel5))
+                    .addComponent(playerlabel))
                 .addGap(18, 18, 18)
                 .addGroup(scoreBoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(singlePlayerLabel3)
-                    .addComponent(singlePlayerLabel6))
+                    .addComponent(tiesLabel))
                 .addGap(23, 23, 23))
         );
 
@@ -445,14 +451,13 @@ public class Window extends javax.swing.JFrame {
     private void initialize() {
         session++;
         prompt = true;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                ar[i][j] = 0;
-            }
-        }
+
+        ways = new int[8][3];
+        counts = new int[8];
+        ar = new int[3][3];
     }
-    
-    
+
+
     private void startBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtnMouseClicked
 
         initialize();
@@ -464,7 +469,33 @@ public class Window extends javax.swing.JFrame {
         }
         startBtn.setIcon(new ImageIcon(getClass().getResource("/images/EMOTICON SMILE.png")));
         wonLbl.setText("");
-        
+
+        if (session % 2 == 0) {
+            prompt = false;
+            mark(ar, 1, 1);
+            if (win() == 5) {
+                wonLbl.setText("You lost!");
+                int count = Integer.parseInt(computerLabel.getText());
+                computerLabel.setText((count + 1) + "");
+                for (int i = 0; i < 3; i++) {
+                    for (JButton b : buttons[i]) {
+                        b.setEnabled(false);
+                    }
+                }
+                return;
+            } else if (win() == -1) {
+                wonLbl.setText("It is a draw!");
+                int count = Integer.parseInt(tiesLabel.getText());
+                tiesLabel.setText((count + 1) + "");
+                for (int i = 0; i < 3; i++) {
+                    for (JButton b : buttons[i]) {
+                        b.setEnabled(false);
+                    }
+                }
+                return;
+            }
+        }
+
     }//GEN-LAST:event_startBtnMouseClicked
 
     private void quitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitBtnActionPerformed
@@ -509,16 +540,16 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JButton b22;
     private javax.swing.JButton backBtn;
     private javax.swing.JLabel backgroungLabel;
+    private javax.swing.JLabel computerLabel;
     private javax.swing.JPanel gridPanel;
+    private javax.swing.JLabel playerlabel;
     private javax.swing.JButton quitBtn;
     private javax.swing.JPanel scoreBoard;
     private javax.swing.JLabel singlePlayerLabel1;
     private javax.swing.JLabel singlePlayerLabel2;
     private javax.swing.JLabel singlePlayerLabel3;
-    private javax.swing.JLabel singlePlayerLabel4;
-    private javax.swing.JLabel singlePlayerLabel5;
-    private javax.swing.JLabel singlePlayerLabel6;
     private javax.swing.JButton startBtn;
+    private javax.swing.JLabel tiesLabel;
     private javax.swing.JLabel titleLbl;
     private javax.swing.JLabel wonLbl;
     // End of variables declaration//GEN-END:variables
@@ -546,19 +577,21 @@ public class Window extends javax.swing.JFrame {
 //    }
     private void respond() {
         int way = isRisky();
-        if (way == -1) {
-            if (isWinning() >= 0) {
-                System.out.println("is winning");
-                attack();
-            } else {
+        if (isWinning() >= 0) {
+            System.out.println("is winning");
+            attack();
+        } else {
+            if (way == -1) {
                 System.out.println("isnot winning");
                 attack();
+            } else {
+                System.out.println(way + "is risky");
+                block(way);
+
             }
-        } else {
-            System.out.println(way + "is risky");
-            block(way);
 
         }
+
     }
 
     int isRisky() {
@@ -791,6 +824,8 @@ public class Window extends javax.swing.JFrame {
         mark(ar, x, y);
         if (win() == 1) {
             wonLbl.setText("You won!");
+            int count = Integer.parseInt(playerlabel.getText());
+            playerlabel.setText((count + 1) + "");
             for (int i = 0; i < 3; i++) {
                 for (JButton b : buttons[i]) {
                     b.setEnabled(false);
@@ -799,6 +834,8 @@ public class Window extends javax.swing.JFrame {
             return;
         } else if (win() == -1) {
             wonLbl.setText("It is a draw!");
+            int count = Integer.parseInt(tiesLabel.getText());
+            tiesLabel.setText((count + 1) + "");
             for (int i = 0; i < 3; i++) {
                 for (JButton b : buttons[i]) {
                     b.setEnabled(false);
@@ -810,6 +847,8 @@ public class Window extends javax.swing.JFrame {
         respond();
         if (win() == 5) {
             wonLbl.setText("You lost!");
+            int count = Integer.parseInt(computerLabel.getText());
+            computerLabel.setText((count + 1) + "");
             for (int i = 0; i < 3; i++) {
                 for (JButton b : buttons[i]) {
                     b.setEnabled(false);
@@ -818,6 +857,8 @@ public class Window extends javax.swing.JFrame {
             return;
         } else if (win() == -1) {
             wonLbl.setText("It is a draw!");
+            int count = Integer.parseInt(tiesLabel.getText());
+            tiesLabel.setText((count + 1) + "");
             for (int i = 0; i < 3; i++) {
                 for (JButton b : buttons[i]) {
                     b.setEnabled(false);
