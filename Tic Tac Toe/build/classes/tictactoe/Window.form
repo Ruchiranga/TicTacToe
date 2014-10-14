@@ -373,7 +373,10 @@
         <Component class="javax.swing.JLabel" name="singlePlayerLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="18" style="3"/>
+              <Font name="Traditional Arabic" size="20" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Computer"/>
           </Properties>
@@ -381,7 +384,10 @@
         <Component class="javax.swing.JLabel" name="singlePlayerLabel2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="18" style="3"/>
+              <Font name="Traditional Arabic" size="20" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Player"/>
           </Properties>
@@ -389,7 +395,10 @@
         <Component class="javax.swing.JLabel" name="singlePlayerLabel3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="18" style="3"/>
+              <Font name="Traditional Arabic" size="20" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ties"/>
           </Properties>
@@ -397,7 +406,10 @@
         <Component class="javax.swing.JLabel" name="singlePlayerLabel4">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="18" style="3"/>
+              <Font name="Traditional Arabic" size="20" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
@@ -405,7 +417,10 @@
         <Component class="javax.swing.JLabel" name="singlePlayerLabel5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="18" style="3"/>
+              <Font name="Traditional Arabic" size="20" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
@@ -413,7 +428,10 @@
         <Component class="javax.swing.JLabel" name="singlePlayerLabel6">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="18" style="3"/>
+              <Font name="Traditional Arabic" size="20" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
@@ -423,7 +441,10 @@
     <Component class="javax.swing.JLabel" name="wonLbl">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="24" style="3"/>
+          <Font name="Traditional Arabic" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="99" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -448,7 +469,10 @@
     <Component class="javax.swing.JButton" name="quitBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="14" style="3"/>
+          <Font name="Traditional Arabic" size="18" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Quit Game"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -474,7 +498,10 @@
     <Component class="javax.swing.JButton" name="backBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="14" style="3"/>
+          <Font name="Traditional Arabic" size="18" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Back"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

@@ -303,22 +303,28 @@ public class Window extends javax.swing.JFrame {
 
         scoreBoard.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 102, 0), new java.awt.Color(153, 0, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 153, 0)));
 
-        singlePlayerLabel1.setFont(new java.awt.Font("Viner Hand ITC", 3, 18)); // NOI18N
+        singlePlayerLabel1.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
+        singlePlayerLabel1.setForeground(new java.awt.Color(153, 0, 0));
         singlePlayerLabel1.setText("Computer");
 
-        singlePlayerLabel2.setFont(new java.awt.Font("Viner Hand ITC", 3, 18)); // NOI18N
+        singlePlayerLabel2.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
+        singlePlayerLabel2.setForeground(new java.awt.Color(153, 0, 0));
         singlePlayerLabel2.setText("Player");
 
-        singlePlayerLabel3.setFont(new java.awt.Font("Viner Hand ITC", 3, 18)); // NOI18N
+        singlePlayerLabel3.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
+        singlePlayerLabel3.setForeground(new java.awt.Color(153, 0, 0));
         singlePlayerLabel3.setText("Ties");
 
-        singlePlayerLabel4.setFont(new java.awt.Font("Viner Hand ITC", 3, 18)); // NOI18N
+        singlePlayerLabel4.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
+        singlePlayerLabel4.setForeground(new java.awt.Color(153, 0, 0));
         singlePlayerLabel4.setText("0");
 
-        singlePlayerLabel5.setFont(new java.awt.Font("Viner Hand ITC", 3, 18)); // NOI18N
+        singlePlayerLabel5.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
+        singlePlayerLabel5.setForeground(new java.awt.Color(153, 0, 0));
         singlePlayerLabel5.setText("0");
 
-        singlePlayerLabel6.setFont(new java.awt.Font("Viner Hand ITC", 3, 18)); // NOI18N
+        singlePlayerLabel6.setFont(new java.awt.Font("Traditional Arabic", 1, 20)); // NOI18N
+        singlePlayerLabel6.setForeground(new java.awt.Color(153, 0, 0));
         singlePlayerLabel6.setText("0");
 
         javax.swing.GroupLayout scoreBoardLayout = new javax.swing.GroupLayout(scoreBoard);
@@ -359,7 +365,8 @@ public class Window extends javax.swing.JFrame {
         getContentPane().add(scoreBoard);
         scoreBoard.setBounds(360, 250, 310, 160);
 
-        wonLbl.setFont(new java.awt.Font("Viner Hand ITC", 3, 24)); // NOI18N
+        wonLbl.setFont(new java.awt.Font("Traditional Arabic", 1, 24)); // NOI18N
+        wonLbl.setForeground(new java.awt.Color(153, 0, 0));
         getContentPane().add(wonLbl);
         wonLbl.setBounds(260, 140, 450, 62);
 
@@ -368,7 +375,8 @@ public class Window extends javax.swing.JFrame {
         getContentPane().add(titleLbl);
         titleLbl.setBounds(239, 30, 360, 65);
 
-        quitBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        quitBtn.setFont(new java.awt.Font("Traditional Arabic", 1, 18)); // NOI18N
+        quitBtn.setForeground(new java.awt.Color(153, 0, 0));
         quitBtn.setText("Quit Game");
         quitBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 102, 0), new java.awt.Color(204, 204, 0)));
         quitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -379,7 +387,8 @@ public class Window extends javax.swing.JFrame {
         getContentPane().add(quitBtn);
         quitBtn.setBounds(530, 430, 140, 40);
 
-        backBtn.setFont(new java.awt.Font("Viner Hand ITC", 3, 14)); // NOI18N
+        backBtn.setFont(new java.awt.Font("Traditional Arabic", 1, 18)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(153, 0, 0));
         backBtn.setText("Back");
         backBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 102, 0), new java.awt.Color(204, 204, 0)));
         backBtn.addActionListener(new java.awt.event.ActionListener() {

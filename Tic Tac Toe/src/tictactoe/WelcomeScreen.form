@@ -64,8 +64,8 @@
                                   <Component id="player2Combo" min="-2" pref="121" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="Player1Label" min="-2" pref="112" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="Player1Label" min="-2" pref="127" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="player1Combo" min="-2" pref="121" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -90,7 +90,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="newPlayer1Btn" min="-2" pref="28" max="-2" attributes="0"/>
-                  <EmptySpace pref="11" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="player2Combo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Player2Label" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -111,7 +111,7 @@
         <Component class="javax.swing.JComboBox" name="player1Combo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="1">
@@ -123,7 +123,7 @@
         <Component class="javax.swing.JButton" name="twoPlayerQuitGameBtn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Quit Game"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -144,7 +144,7 @@
         <Component class="javax.swing.JButton" name="newPlayer1Btn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="New Player"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -165,7 +165,7 @@
         <Component class="javax.swing.JLabel" name="Player1Label">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Select Player 1"/>
           </Properties>
@@ -173,7 +173,7 @@
         <Component class="javax.swing.JLabel" name="Player2Label">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Select Player 2"/>
           </Properties>
@@ -181,7 +181,7 @@
         <Component class="javax.swing.JComboBox" name="player2Combo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="1">
@@ -193,7 +193,7 @@
         <Component class="javax.swing.JButton" name="newPlayer2Btn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="New Player"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -214,7 +214,7 @@
         <Component class="javax.swing.JButton" name="backBtn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Back"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -285,7 +285,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="singlePlayerNewPlayerBtn" min="-2" pref="28" max="-2" attributes="0"/>
-                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                  <EmptySpace pref="28" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="singlePlayerQuitGameBtn" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="singlePlayerBackBtn" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
@@ -299,7 +299,7 @@
         <Component class="javax.swing.JComboBox" name="singlePlayerNameCombo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="1">
@@ -311,7 +311,7 @@
         <Component class="javax.swing.JButton" name="singlePlayerQuitGameBtn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Quit Game"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -332,7 +332,7 @@
         <Component class="javax.swing.JButton" name="singlePlayerNewPlayerBtn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="New Player"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -353,7 +353,7 @@
         <Component class="javax.swing.JLabel" name="singlePlayerLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Select Player"/>
           </Properties>
@@ -361,7 +361,7 @@
         <Component class="javax.swing.JButton" name="singlePlayerBackBtn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="3"/>
+              <Font name="Traditional Arabic" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Back"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -381,10 +381,164 @@
         </Component>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JPanel" name="NewPlayerPlanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="0" green="66" red="cc" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="0" green="0" red="99" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="cc" red="cc" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="0" green="99" red="cc" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="160" y="170" width="310" height="220"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="newPlayerNameLabel" min="-2" pref="112" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="playerNameText" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="newPlayerBackBtn" min="-2" pref="121" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="newPlayerQuitGameBtn" min="-2" pref="121" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                                  <Component id="addPlayerBtn" min="-2" pref="121" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="newPlayerNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="playerNameText" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="addPlayerBtn" pref="50" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="newPlayerQuitGameBtn" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="newPlayerBackBtn" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="newPlayerQuitGameBtn">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Traditional Arabic" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Quit Game"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder>
+                  <Color PropertyName="highlightOuter" blue="0" green="99" red="cc" type="rgb"/>
+                  <Color PropertyName="highlightInner" blue="0" green="0" red="cc" type="rgb"/>
+                  <Color PropertyName="shadowOuter" blue="0" green="cc" red="cc" type="rgb"/>
+                  <Color PropertyName="shadowInner" blue="0" green="cc" red="cc" type="rgb"/>
+                </BevelBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newPlayerQuitGameBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="newPlayerNameLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Traditional Arabic" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Player Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="newPlayerBackBtn">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Traditional Arabic" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Back"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder>
+                  <Color PropertyName="highlightOuter" blue="0" green="99" red="cc" type="rgb"/>
+                  <Color PropertyName="highlightInner" blue="0" green="0" red="cc" type="rgb"/>
+                  <Color PropertyName="shadowOuter" blue="0" green="cc" red="cc" type="rgb"/>
+                  <Color PropertyName="shadowInner" blue="0" green="cc" red="cc" type="rgb"/>
+                </BevelBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newPlayerBackBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="playerNameText">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Traditional Arabic" size="18" style="1"/>
+            </Property>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Text Cursor"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="addPlayerBtn">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Traditional Arabic" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Add Player"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder>
+                  <Color PropertyName="highlightOuter" blue="0" green="99" red="cc" type="rgb"/>
+                  <Color PropertyName="highlightInner" blue="0" green="0" red="cc" type="rgb"/>
+                  <Color PropertyName="shadowOuter" blue="0" green="cc" red="cc" type="rgb"/>
+                  <Color PropertyName="shadowInner" blue="0" green="cc" red="cc" type="rgb"/>
+                </BevelBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPlayerBtnActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
     <Component class="javax.swing.JButton" name="playBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="14" style="3"/>
+          <Font name="Traditional Arabic" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Let&apos;s Play"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -410,7 +564,7 @@
     <Component class="javax.swing.JButton" name="twoPlayerBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="18" style="3"/>
+          <Font name="Traditional Arabic" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Two Player"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -436,7 +590,7 @@
     <Component class="javax.swing.JButton" name="singlePlayerBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="18" style="3"/>
+          <Font name="Traditional Arabic" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Single Player"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -462,7 +616,7 @@
     <Component class="javax.swing.JButton" name="quitGameBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="18" style="3"/>
+          <Font name="Traditional Arabic" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Quit Game"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -489,6 +643,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Viner Hand ITC" size="36" style="3"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Tic Tac Toe"/>
       </Properties>
