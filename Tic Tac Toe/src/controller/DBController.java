@@ -41,4 +41,12 @@ public class DBController {
         
         return names;
     }
+
+    public static int getSPUserWinCount(String name) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static int getSPComWinCount(String name) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -10,6 +10,7 @@
  */
 package tictactoe;
 
+import controller.DBController;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -28,7 +29,7 @@ public class Window extends javax.swing.JFrame {
     int ar[][];
     //int winner;
 
-    public Window() {
+    public Window(String name) {
         ar = new int[3][3];
         initComponents();
 
@@ -72,6 +73,11 @@ public class Window extends javax.swing.JFrame {
         buttons[2][1] = b21;
         buttons[2][2] = b22;
 
+        int userScore = DBController.getSPUserWinCount(name);
+        int comScore = DBController.getSPComWinCount(name);
+        
+        
+        
         if (session % 2 == 0) {
             prompt = false;
 //            respond();
@@ -524,7 +530,7 @@ public class Window extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new Window().setVisible(true);
+                new Window(null).setVisible(true);
             }
         });
     }

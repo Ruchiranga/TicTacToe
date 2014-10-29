@@ -561,7 +561,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private void playBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playBtnActionPerformed
         if (isSinglePlayer) {
             this.dispose();
-            Window game = new Window();
+            Window game = new Window(singlePlayerNameCombo.getSelectedItem().toString());
             game.setLocationRelativeTo(null);
             game.setVisible(true);
         } else {
