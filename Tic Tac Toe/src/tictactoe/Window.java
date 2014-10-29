@@ -400,6 +400,7 @@ public class Window extends javax.swing.JFrame {
         backBtn.setBounds(360, 430, 140, 40);
 
         backgroungLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vintage-Backgrounds-7.jpg"))); // NOI18N
+        backgroungLabel.setText("stat");
         getContentPane().add(backgroungLabel);
         backgroungLabel.setBounds(0, 0, 740, 520);
 
