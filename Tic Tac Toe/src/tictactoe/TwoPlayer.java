@@ -5,6 +5,11 @@
  */
 package tictactoe;
 
+import controller.MultiPlayerController;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -18,14 +23,21 @@ public class TwoPlayer extends javax.swing.JFrame {
     JButton[][] btn_array = new JButton[3][3];
 
     TicTacToeDualVersionLogic logic;
+    private String name1;
+    private String name2;
+
     /**
      * Creates new form TwoPlayer
      */
-    public TwoPlayer() {
+    public TwoPlayer(String name1, String name2) {
         initComponents();
+        this.name1 = name1;
+        this.name2 = name2;
+        singlePlayerLabel1.setText(name1);
+        singlePlayerLabel2.setText(name2);
         gridPanel.setOpaque(false);
         scoreBoard.setOpaque(false);
-        
+
         startBtn.setOpaque(false);
         startBtn.setContentAreaFilled(false);
         Btn1.setOpaque(false);
@@ -48,11 +60,10 @@ public class TwoPlayer extends javax.swing.JFrame {
         Btn9.setContentAreaFilled(false);
         quitBtn.setOpaque(false);
         quitBtn.setContentAreaFilled(false);
-        
+
         backBtn.setOpaque(false);
         backBtn.setContentAreaFilled(false);
-        
-        
+
         setLocationRelativeTo(null);
         btn_array[0][0] = Btn1;
         btn_array[0][1] = Btn2;
@@ -65,8 +76,86 @@ public class TwoPlayer extends javax.swing.JFrame {
         btn_array[2][2] = Btn9;
 
         logic = new TicTacToeDualVersionLogic(btn_array);
+
+        setStatistics();
     }
 
+    private void setStatistics() {
+        try {
+            ResultSet rst = MultiPlayerController.getMultiPlayerStats(name1, name2);
+            while (rst.next()) {
+                singlePlayerLabel4.setText(rst.getString("Player1_score"));
+                singlePlayerLabel5.setText(rst.getString("Player2_score"));
+                singlePlayerLabel6.setText(rst.getString("Ties"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SinglePlayer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SinglePlayer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private JButton returnBtn(int btn_no){
+        if(btn_no == 1){
+            return this.Btn1;
+        }else if(btn_no == 2){
+            return this.Btn2;
+        }else if(btn_no == 3){
+            return this.Btn3;
+        }else if(btn_no == 4){
+            return this.Btn4;
+        }else if(btn_no == 5){
+            return this.Btn5;
+        }else if(btn_no == 6){
+            return this.Btn6;
+        }else if(btn_no == 7){
+            return this.Btn7;
+        }else if(btn_no == 8){
+            return this.Btn8;
+        }else {
+            return this.Btn9;
+        }
+    }
+
+    private void btnAction(int click, int btn_no){
+        try {
+            JButton btn = returnBtn(btn_no);
+            if (click == 1) {
+                btn.setIcon(new ImageIcon(getClass().getResource("/images/circle.jpg")));
+                if (logic.isPlayerWon(1)) {
+
+                    MultiPlayerController.updatePlayer1WinCount(name1, name2);
+                    
+                    wonLbl.setText("Congradulations!  \n"+name1+" Won!");
+                    setStatistics();
+                    startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
+                    
+                }else if(logic.isDraw()){
+                    MultiPlayerController.updateTieCount(name1, name2);
+                    wonLbl.setText("Too bad, it's a draw!");
+                    setStatistics();
+                    startBtn.setIcon(new ImageIcon(getClass().getResource("/images/a.png")));
+                }
+            } else if (click == 2) {
+                btn.setIcon(new ImageIcon(getClass().getResource("/images/cross.jpg")));
+                if (logic.isPlayerWon(2)) {
+                    MultiPlayerController.updatePlayer2WinCount(name1, name2);
+                    wonLbl.setText("Congradulations!  \n"+name2+" Won!");
+                    setStatistics();
+                    startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
+                }else if(logic.isDraw()){
+                    MultiPlayerController.updateTieCount(name1, name2);
+                    wonLbl.setText("Too bad, it's a draw!");
+                    setStatistics();
+                    startBtn.setIcon(new ImageIcon(getClass().getResource("/images/a.png")));
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TwoPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(TwoPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -131,11 +220,21 @@ public class TwoPlayer extends javax.swing.JFrame {
                 Btn2MouseClicked(evt);
             }
         });
+        Btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn2ActionPerformed(evt);
+            }
+        });
 
         Btn3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 102, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 102, 0), new java.awt.Color(204, 204, 0)));
         Btn3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Btn3MouseClicked(evt);
+            }
+        });
+        Btn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn3ActionPerformed(evt);
             }
         });
 
@@ -145,11 +244,21 @@ public class TwoPlayer extends javax.swing.JFrame {
                 Btn4MouseClicked(evt);
             }
         });
+        Btn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn4ActionPerformed(evt);
+            }
+        });
 
         Btn5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 102, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 102, 0), new java.awt.Color(204, 204, 0)));
         Btn5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Btn5MouseClicked(evt);
+            }
+        });
+        Btn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn5ActionPerformed(evt);
             }
         });
 
@@ -159,11 +268,21 @@ public class TwoPlayer extends javax.swing.JFrame {
                 Btn6MouseClicked(evt);
             }
         });
+        Btn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn6ActionPerformed(evt);
+            }
+        });
 
         Btn7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 102, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 102, 0), new java.awt.Color(204, 204, 0)));
         Btn7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Btn7MouseClicked(evt);
+            }
+        });
+        Btn7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn7ActionPerformed(evt);
             }
         });
 
@@ -173,11 +292,21 @@ public class TwoPlayer extends javax.swing.JFrame {
                 Btn8MouseClicked(evt);
             }
         });
+        Btn8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn8ActionPerformed(evt);
+            }
+        });
 
         Btn9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 102, 0), new java.awt.Color(204, 0, 0), new java.awt.Color(204, 102, 0), new java.awt.Color(204, 204, 0)));
         Btn9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Btn9MouseClicked(evt);
+            }
+        });
+        Btn9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn9ActionPerformed(evt);
             }
         });
 
@@ -353,178 +482,53 @@ public class TwoPlayer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn1MouseClicked
-
-        int click = logic.click(0, 0, 0);
-        if (click == 1) {
-            Btn1.setIcon(new ImageIcon(getClass().getResource("/images/circle.jpg")));
-            if (logic.isPlayerWon(1)) {
-                wonLbl.setText("Congradulations!  \nPlayer 1 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        } else if (click == 2) {
-            Btn1.setIcon(new ImageIcon(getClass().getResource("/images/cross.jpg")));
-            if (logic.isPlayerWon(2)) {
-                wonLbl.setText("Congradulations!  \nPlayer 2 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        }
-
+        
     }//GEN-LAST:event_Btn1MouseClicked
 
     private void Btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn1ActionPerformed
-        // TODO add your handling code here:
+        int click = logic.click(0, 0, 0);
+        btnAction(click,1);
+
     }//GEN-LAST:event_Btn1ActionPerformed
 
     private void Btn2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn2MouseClicked
-        int click = logic.click(1, 0, 1);
-        if (click == 1) {
-            Btn2.setIcon(new ImageIcon(getClass().getResource("/images/circle.jpg")));
-            if (logic.isPlayerWon(1)) {
-                wonLbl.setText("Congradulations!  \nPlayer 1 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        } else if (click == 2) {
-            Btn2.setIcon(new ImageIcon(getClass().getResource("/images/cross.jpg")));
-            if (logic.isPlayerWon(2)) {
-                wonLbl.setText("Congradulations!  \nPlayer 2 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        }
+       
     }//GEN-LAST:event_Btn2MouseClicked
 
     private void Btn3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn3MouseClicked
-        int click = logic.click(2, 0, 2);
-        if (click == 1) {
-            Btn3.setIcon(new ImageIcon(getClass().getResource("/images/circle.jpg")));
-            if (logic.isPlayerWon(1)) {
-                wonLbl.setText("Congradulations!  \nPlayer 1 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        } else if (click == 2) {
-            Btn3.setIcon(new ImageIcon(getClass().getResource("/images/cross.jpg")));
-            if (logic.isPlayerWon(2)) {
-                wonLbl.setText("Congradulations!  \nPlayer 2 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        }
+        
     }//GEN-LAST:event_Btn3MouseClicked
 
     private void Btn4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn4MouseClicked
-        int click = logic.click(3, 1, 0);
-        if (click == 1) {
-            Btn4.setIcon(new ImageIcon(getClass().getResource("/images/circle.jpg")));
-            if (logic.isPlayerWon(1)) {
-                wonLbl.setText("Congradulations!  \nPlayer 1 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        } else if (click == 2) {
-            Btn4.setIcon(new ImageIcon(getClass().getResource("/images/cross.jpg")));
-            if (logic.isPlayerWon(2)) {
-                wonLbl.setText("Congradulations!  \nPlayer 2 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        }
+        
     }//GEN-LAST:event_Btn4MouseClicked
 
     private void Btn5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn5MouseClicked
 
-        int click = logic.click(4, 1, 1);
-        if (click == 1) {
-            Btn5.setIcon(new ImageIcon(getClass().getResource("/images/circle.jpg")));
-            if (logic.isPlayerWon(1)) {
-                wonLbl.setText("Congradulations!  \nPlayer 1 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        } else if (click == 2) {
-            Btn5.setIcon(new ImageIcon(getClass().getResource("/images/cross.jpg")));
-            if (logic.isPlayerWon(2)) {
-                wonLbl.setText("Congradulations!  \nPlayer 2 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        }
+       
 
     }//GEN-LAST:event_Btn5MouseClicked
 
     private void Btn6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn6MouseClicked
-        int click = logic.click(5, 1, 2);
-        if (click == 1) {
-            Btn6.setIcon(new ImageIcon(getClass().getResource("/images/circle.jpg")));
-            if (logic.isPlayerWon(1)) {
-                wonLbl.setText("Congradulations!  \nPlayer 1 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        } else if (click == 2) {
-            Btn6.setIcon(new ImageIcon(getClass().getResource("/images/cross.jpg")));
-            if (logic.isPlayerWon(2)) {
-                wonLbl.setText("Congradulations!  \nPlayer 2 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        }
+        
     }//GEN-LAST:event_Btn6MouseClicked
 
     private void Btn7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn7MouseClicked
-        int click = logic.click(6, 2, 0);
-        if (click == 1) {
-            Btn7.setIcon(new ImageIcon(getClass().getResource("/images/circle.jpg")));
-            if (logic.isPlayerWon(1)) {
-                wonLbl.setText("Congradulations!  \nPlayer 1 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        } else if (click == 2) {
-            Btn7.setIcon(new ImageIcon(getClass().getResource("/images/cross.jpg")));
-            if (logic.isPlayerWon(2)) {
-                wonLbl.setText("Congradulations!  \nPlayer 2 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        }
+        
     }//GEN-LAST:event_Btn7MouseClicked
 
     private void Btn8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn8MouseClicked
-        int click = logic.click(7, 2, 1);
-        if (click == 1) {
-            Btn8.setIcon(new ImageIcon(getClass().getResource("/images/circle.jpg")));
-            if (logic.isPlayerWon(1)) {
-                wonLbl.setText("Congradulations!  \nPlayer 1 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        } else if (click == 2) {
-            Btn8.setIcon(new ImageIcon(getClass().getResource("/images/cross.jpg")));
-            if (logic.isPlayerWon(2)) {
-                wonLbl.setText("Congradulations!  \nPlayer 2 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        }
+        
     }//GEN-LAST:event_Btn8MouseClicked
 
     private void Btn9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn9MouseClicked
-        int click = logic.click(8, 2, 2);
-        if (click == 1) {
-            Btn9.setIcon(new ImageIcon(getClass().getResource("/images/circle.jpg")));
-            if (logic.isPlayerWon(1)) {
-                wonLbl.setText("Congradulations!  \nPlayer 1 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        } else if (click == 2) {
-            Btn9.setIcon(new ImageIcon(getClass().getResource("/images/cross.jpg")));
-            if (logic.isPlayerWon(2)) {
-                wonLbl.setText("Congradulations!  \nPlayer 2 Won!");
-                startBtn.setIcon(new ImageIcon(getClass().getResource("/images/smile.png")));
-            }
-        }
+        
 
     }//GEN-LAST:event_Btn9MouseClicked
 
     private void startBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtnMouseClicked
 
-        logic.initialize();
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                btn_array[i][j].setIcon(null);
-                btn_array[i][j].setEnabled(true);
-            }
-        }
-        startBtn.setIcon(new ImageIcon(getClass().getResource("/images/EMOTICON SMILE.png")));
-        wonLbl.setText("");
+        
 
     }//GEN-LAST:event_startBtnMouseClicked
 
@@ -542,7 +546,15 @@ public class TwoPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_quitBtnActionPerformed
 
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
-        // TODO add your handling code here:
+        logic.initialize();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                btn_array[i][j].setIcon(null);
+                btn_array[i][j].setEnabled(true);
+            }
+        }
+        startBtn.setIcon(new ImageIcon(getClass().getResource("/images/EMOTICON SMILE.png")));
+        wonLbl.setText("");
     }//GEN-LAST:event_startBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
@@ -552,6 +564,46 @@ public class TwoPlayer extends javax.swing.JFrame {
         welcome.setLocationRelativeTo(null);
         welcome.setVisible(true);
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void Btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2ActionPerformed
+        int click = logic.click(1, 0, 1);
+        btnAction(click,2);
+    }//GEN-LAST:event_Btn2ActionPerformed
+
+    private void Btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn3ActionPerformed
+        int click = logic.click(2, 0, 2);
+        btnAction(click,3);
+    }//GEN-LAST:event_Btn3ActionPerformed
+
+    private void Btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn4ActionPerformed
+        int click = logic.click(3, 1, 0);
+        btnAction(click,4);
+    }//GEN-LAST:event_Btn4ActionPerformed
+
+    private void Btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn5ActionPerformed
+         int click = logic.click(4, 1, 1);
+        btnAction(click,5);
+    }//GEN-LAST:event_Btn5ActionPerformed
+
+    private void Btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn6ActionPerformed
+        int click = logic.click(5, 1, 2);
+        btnAction(click,6);
+    }//GEN-LAST:event_Btn6ActionPerformed
+
+    private void Btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn7ActionPerformed
+        int click = logic.click(6, 2, 0);
+        btnAction(click,7);
+    }//GEN-LAST:event_Btn7ActionPerformed
+
+    private void Btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn8ActionPerformed
+        int click = logic.click(7, 2, 1);
+        btnAction(click,8);
+    }//GEN-LAST:event_Btn8ActionPerformed
+
+    private void Btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn9ActionPerformed
+        int click = logic.click(8, 2, 2);
+        btnAction(click,9);
+    }//GEN-LAST:event_Btn9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -583,7 +635,7 @@ public class TwoPlayer extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TwoPlayer().setVisible(true);
+                new TwoPlayer(null, null).setVisible(true);
             }
         });
     }

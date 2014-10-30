@@ -23,13 +23,10 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            //UIManager.setLookAndFeel(new SyntheticaBlackStarLookAndFeel());
             UIManager.setLookAndFeel("com.jtattoo.plaf.noire.NoireLookAndFeel");
             WelcomeScreen menu = new WelcomeScreen();
             menu.setLocationRelativeTo(null);
             menu.setVisible(true);
-            //SinglePlayer tic = new SinglePlayer(null, true);
-            //tic.setVisible(true);
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

@@ -27,8 +27,6 @@ public class TicTacToeDualVersionLogic {
             no_of_clicks += 1;
 
             if ((no_of_clicks % 2) == 1) {
-
-
                 clicked[i] = 1;
                 ar[row][col] = 1;
                 return 1;
@@ -56,6 +54,22 @@ public class TicTacToeDualVersionLogic {
             clicked[i] = 0;
         }
     }
+    
+    public boolean isDraw(){
+        boolean isDraw = true;
+        for (int k = 0; k < 3; k++) {
+            for (int l = 0; l < 3; l++) {
+                if(ar[l][k] == 0){
+                    isDraw = false;
+                    break;
+                }
+            }
+            if(!isDraw){
+                break;
+            }
+        }
+        return isDraw;
+    }
 
     public boolean isPlayerWon(int player) {
         int total = 0;
@@ -73,7 +87,7 @@ public class TicTacToeDualVersionLogic {
         for (int i = 0; i < 3; i++) {
             total = 0;
             for (int j = 0; j < 3; j++) {
-                System.out.println(ar[i][j]);
+                //System.out.println(ar[i][j]);
                 total += ar[i][j];
             }
             if (total == checkTot) {
